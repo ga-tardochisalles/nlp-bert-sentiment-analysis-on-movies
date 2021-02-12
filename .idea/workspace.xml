@@ -17,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="JupyterTrust" id="4090a85f-0acd-4cf7-b482-4acd15f9e9e0" />
+  <component name="JupyterTrust" id="a34e0edf-0636-48a6-9e5e-2a6d26ecbfe9" />
   <component name="ProjectId" id="1oKmvXRf1XCLVW6mEB9CO94cgwF" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -66,6 +66,9 @@
       <option name="presentableId" value="Default" />
       <updated>1613043886752</updated>
       <workItem from="1613043888240" duration="1938000" />
+      <workItem from="1613072214630" duration="91000" />
+      <workItem from="1613072316047" duration="2069000" />
+      <workItem from="1613074699262" duration="4541000" />
     </task>
     <servers />
   </component>
@@ -73,24 +76,29 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1613046044066">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1613072312988">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1613046044066" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1613046044066">
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1613072312988" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1613091192180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1613046044066" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1613046044066">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1613091192180" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1613091192179">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1613046044066" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1613046044066">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1613091192179" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1613091192179">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1613046044066" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1613091192179" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1613091192179">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1613091192179" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/nlp_bert_sentiment_analysis_on_movies$train.coverage" NAME="train Coverage Results" MODIFIED="1613045806298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/train_py$train.coverage" NAME="train Coverage Results" MODIFIED="1613090930969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

@@ -107,37 +107,39 @@ class BERTBaseUncased(tez.Model):
 
 
 if __name__ == "__main__":
-    dfx = pd.read_csv("../input/imdb.csv").fillna("none")
-    dfx.sentiment = dfx.sentiment.apply(lambda x: 1 if x == "positive" else 0)
+    training = False
+    if training:
+        dfx = pd.read_csv("../input/imdb.csv").fillna("none")
+        dfx.sentiment = dfx.sentiment.apply(lambda x: 1 if x == "positive" else 0)
 
-    df_train, df_valid = model_selection.train_test_split(
-        dfx, test_size=0.1, random_state=42, stratify=dfx.sentiment.values
-    )
+        df_train, df_valid = model_selection.train_test_split(
+            dfx, test_size=0.1, random_state=42, stratify=dfx.sentiment.values
+        )
 
-    df_train = df_train.reset_index(drop=True)
-    df_valid = df_valid.reset_index(drop=True)
+        df_train = df_train.reset_index(drop=True)
+        df_valid = df_valid.reset_index(drop=True)
 
-    train_dataset = BERTDataset(
-        review=df_train.review.values, target=df_train.sentiment.values
-    )
+        train_dataset = BERTDataset(
+            review=df_train.review.values, target=df_train.sentiment.values
+        )
 
-    valid_dataset = BERTDataset(
-        review=df_valid.review.values, target=df_valid.sentiment.values
-    )
+        valid_dataset = BERTDataset(
+            review=df_valid.review.values, target=df_valid.sentiment.values
+        )
 
-    n_train_steps = int(len(df_train) / 32 * 10)
-    model = BERTBaseUncased(num_train_steps=n_train_steps)
+        n_train_steps = int(len(df_train) / 4 * 10)
+        model = BERTBaseUncased(num_train_steps=n_train_steps)
 
-    # model.load("model.bin")
-    tb_logger = tez.callbacks.TensorBoardLogger(log_dir=".logs/")
-    es = tez.callbacks.EarlyStopping(monitor="valid_loss", model_path="model.bin")
-    model.fit(
-        train_dataset,
-        valid_dataset=valid_dataset,
-        train_bs=32,
-        device="cuda",
-        epochs=50,
-        callbacks=[tb_logger, es],
-        fp16=True,
-    )
-    model.save("model.bin")
+        # model.load("model.bin")
+        tb_logger = tez.callbacks.TensorBoardLogger(log_dir=".logs/")
+        es = tez.callbacks.EarlyStopping(monitor="valid_loss", model_path="model.bin")
+        model.fit(
+            train_dataset,
+            valid_dataset=valid_dataset,
+            train_bs=4,
+            device="cuda",
+            epochs=50,
+            callbacks=[tb_logger, es],
+            fp16=True,
+        )
+        model.save("model.bin")
