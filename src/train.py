@@ -143,3 +143,7 @@ if __name__ == "__main__":
             fp16=True,
         )
         model.save("model.bin")
+    else:
+        model = BERTBaseUncased(1)
+        model.load("model.bin")
+        print(model(BERTDataset("loved", None)))
