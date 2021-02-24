@@ -26,7 +26,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../covid-world-vaccination-progress" />
   </component>
   <component name="RunManager">
     <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -70,6 +70,7 @@
       <workItem from="1613072316047" duration="2069000" />
       <workItem from="1613074699262" duration="4541000" />
       <workItem from="1613436386369" duration="368000" />
+      <workItem from="1613730750817" duration="127000" />
     </task>
     <servers />
   </component>
@@ -77,10 +78,10 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1613072312988">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1613730885894">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1613072312988" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1613730885894" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1613436756296">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
