@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import tez
 import torch
 import torch.nn as nn
@@ -146,4 +147,5 @@ if __name__ == "__main__":
     else:
         model = BERTBaseUncased(1)
         model.load("model.bin")
-        print(model(BERTDataset("loved", None)))
+        p = model.predict_one_step(BERTDataset(pd.Series(["I loved it"]), pd.Series([0])))
+        print(p)
