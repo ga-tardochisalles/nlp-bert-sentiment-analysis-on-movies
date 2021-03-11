@@ -1,11 +1,13 @@
 import pandas as pd
 import numpy as np
-import tez
+from tez_model import Model as tez_Model
+from tez_classes import TensorBoardLogger, EarlyStopping
 import torch
 import torch.nn as nn
 import transformers
 from sklearn import metrics, model_selection
 from transformers import AdamW, get_linear_schedule_with_warmup
+torch.cuda.empty_cache()
 
 
 class BERTDataset:
@@ -45,7 +47,7 @@ class BERTDataset:
         }
 
 
-class BERTBaseUncased(tez.Model):
+class BERTBaseUncased(tez_Model):
     def __init__(self, num_train_steps):
         super().__init__()
         self.tokenizer = transformers.BertTokenizer.from_pretrained(
@@ -110,7 +112,7 @@ class BERTBaseUncased(tez.Model):
 if __name__ == "__main__":
     training = True
     if training:
-        dfx = pd.read_csv("../input/imdb.csv").fillna("none")
+        dfx = pd.read_csv("./input/imdb.csv").fillna("none")
         dfx.sentiment = dfx.sentiment.apply(lambda x: 1 if x == "positive" else 0)
 
         df_train, df_valid = model_selection.train_test_split(
@@ -128,20 +130,21 @@ if __name__ == "__main__":
             review=df_valid.review.values, target=df_valid.sentiment.values
         )
 
-        n_train_steps = int(len(df_train) / 4 * 10)
+        n_train_steps = int(len(df_train) / 2 * 10)
         model = BERTBaseUncased(num_train_steps=n_train_steps)
 
         # model.load("model.bin")
-        tb_logger = tez.callbacks.TensorBoardLogger(log_dir=".logs/")
-        es = tez.callbacks.EarlyStopping(monitor="valid_loss", model_path="model.bin")
+        tb_logger = TensorBoardLogger(log_dir=".logs/")
+        es = EarlyStopping(monitor="valid_loss", model_path="model.bin")
         model.fit(
             train_dataset,
             valid_dataset=valid_dataset,
-            train_bs=4,
+            train_bs=2,
             device="cuda",
-            epochs=50,
+            epochs=10,
             callbacks=[tb_logger, es],
             fp16=True,
+            n_jobs=4
         )
         model.save("model.bin")
     else:
