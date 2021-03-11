@@ -108,7 +108,7 @@ class BERTBaseUncased(tez.Model):
 
 
 if __name__ == "__main__":
-    training = False
+    training = True
     if training:
         dfx = pd.read_csv("../input/imdb.csv").fillna("none")
         dfx.sentiment = dfx.sentiment.apply(lambda x: 1 if x == "positive" else 0)
